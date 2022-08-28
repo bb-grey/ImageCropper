@@ -65,9 +65,7 @@ const EditImage = ({onPressDone, onPressBack}) => {
         onPressTrailing={_handleDonePress}
       />
       <VerticalSpacer />
-
       <View style={[defaultStyles.container, styles.container]}>
-        {/* <View style={styles.bg}></View> */}
         <MaskedView
           style={styles.maskView}
           removeClippedSubviews={true}
@@ -76,9 +74,11 @@ const EditImage = ({onPressDone, onPressBack}) => {
               <View style={styles.box}></View>
             </View>
           }>
-          <View style={{flex: 1, height: '100%', backgroundColor: 'red'}} />
-
           <View style={styles.imageContainer}>
+            <View
+              style={{flex: 1, height: '100%', backgroundColor: '#324376'}}
+            />
+
             <GestureDetector gesture={gesture}>
               <Animated.Image
                 source={Images.car}
@@ -104,23 +104,17 @@ const EditImage = ({onPressDone, onPressBack}) => {
 };
 
 const styles = StyleSheet.create({
-  // imageEditContainer: {
-  //   backgroundColor: '#000',
-  // },
   container: {
-    // backgroundColor: 'red',
     padding: 0,
-    // opacity: 0.2,
   },
   maskView: {
     flex: 1,
     flexDirection: 'row',
     height: '100%',
     backgroundColor: '#000',
-    opacity: 0.5,
   },
   maskElement: {
-    backgroundColor: 'red',
+    backgroundColor: 'transparent',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -133,20 +127,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     width: 300,
     height: 200,
-    opacity: 1,
-    zIndex: 20000,
   },
   imageContainer: {
     width: '100%',
     height: '100%',
     // zIndex: 50000,
-  },
-  bg: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'transparent',
-    position: 'absolute',
   },
 });
 
